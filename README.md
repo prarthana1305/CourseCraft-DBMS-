@@ -25,7 +25,7 @@ A web-based Course Management System built using PHP and MySQL, designed to mana
    - Instructors can view all students enrolled in a course. The system fetches data from the database to display a list of enrolled students for each course.
 
 ### 4. **Marks Management**
-   - Instructors can manage and view student marks across various courses. This section allows the instructor to track student performance by viewing their grades and other academic details.
+   - Instructors can manage and view student marks across various courses. This section allows the instructor to track student performance by viewing their grades.
 
 ### 5. **Feedback Management**
    - Instructors can submit feedback for students. The feedback form allows the instructor to input the student ID, course name, and feedback message. Once submitted, the feedback is stored in the database for future reference.
