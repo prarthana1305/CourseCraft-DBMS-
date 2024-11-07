@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #444648, #21cbf3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 30px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: rgba(120, 148, 154, 0.7);
+            transform: scale(1.1);
+        }
+
+        /* Content Section Styling */
+        .content-section {
+            width: 90%;
+            max-width: 800px;
+            background: #dce6e8;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #2196f3;
+        }
+
+        .content-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h2{
+            align-items: center;
+            color:#1e1c1c;
+            display: flex;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            .navbar h1 {
+                font-size: 20px;
+            }
+
+            .navbar ul li a {
+                font-size: 16px;
+            }
+
+            .content-section h2 {
+                font-size: 24px;
+            }
+
+            .content-section p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Dashboard</h1>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+            <li><a href="#" onclick="showSection('courses')">Courses</a></li>
+        </ul>
+    </div>
+
+    <!-- Content Sections -->
+    <div id="home" class="content-section">
+        <h2>Welcome to the Home Page</h2>
+        <p>
+            Online course management systems bring learning to your fingertips, making it easier than ever to dive into new subjects from anywhere in the world. These platforms offer a variety of tools that help students stay organized, track progress, and engage with interactive content at their own pace. With resources like video tutorials, quizzes, and discussion forums, online course management turns every device into a mini classroom, creating a personal, cozy learning environment. This digital flexibility means that whether you're curled up on the couch or on the go, you can keep learning and exploring new topics that spark your curiosity!</p><br><br>
+            <h2>What are you waiting for? Get started!!</h2>
+    </div>
+
+    <div id="courses" class="content-section" style="display: none;">
+        <h2>Courses</h2>
+        <p>Explore our wide range of courses available to help you learn and grow.</p>
+    </div>
+
+    <script>
+        // Function to show a specific section and hide others
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';
+            selectedSection.classList.add('fadeIn');
+        }
+    </script>
+</body>
+</html>
